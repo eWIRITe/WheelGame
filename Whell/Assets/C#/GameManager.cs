@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
     {
         int i = UnityEngine.Random.Range(0, 100);
 
-        if (i * DateTime.Now.Minute / 60 < rate)
+        if (i * DateTime.Now.Second / 60 < rate)
         {
             Debug.Log("true");
             return true;

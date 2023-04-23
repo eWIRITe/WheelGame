@@ -10,26 +10,25 @@ public class Arrow : MonoBehaviour
 
     public PolygonCollider2D _pc2D;
 
+    public Transform PosForRay;
+
+    private Ray _ray;
+
     private void Start()
     {
         _pc2D = GetComponent<PolygonCollider2D>();
+        _ray = new Ray(PosForRay.position, Vector3.forward);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        Coliders.Add(collision.gameObject);
+        Debug.DrawRay(_ray.origin, _ray.direction * 10);
 
-        LeanTween.rotateZ(this.gameObject, -15, 0.2f).setOnComplete(ReturnToStandart);
-
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Coliders.Remove(collision.gameObject);
-        if (Coliders.Count > 0)
+        RaycastHit2D hit = Physics2D.Raycast(PosForRay.position, Vector3.forward);
+        
+        if (hit.collider != null)
         {
-
-            switch (Coliders[0].tag)
+            switch (hit.collider.tag)
             {
                 case "2":
                     nowNumber = 2;
@@ -67,8 +66,13 @@ public class Arrow : MonoBehaviour
                     break;
             }
         }
+        else Debug.Log("No hit colider");
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        LeanTween.rotateZ(this.gameObject, -15, 0.2f).setOnComplete(ReturnToStandart);
+    }
     public void ReturnToStandart()
     {
         LeanTween.rotateZ(this.gameObject, 0, 0.3f);

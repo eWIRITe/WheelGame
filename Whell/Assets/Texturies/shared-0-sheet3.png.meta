@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82581cd1b90cd9e47bc1a3c68bfc9dcf
-      internalID: -2011092232
+      spriteID: 13e894ee8453cd6409abc24a7bcc37ab
+      internalID: 434818458
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 642cf35ebe3b71c438e6ba258e6d5795
-      internalID: 1005186386
+      spriteID: ca2ef87f73bfcf04b890dfe1451e1c79
+      internalID: 141397088
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 584afe5803fe96b4db2f154178de5457
-      internalID: -82524921
+      spriteID: 397fc0b008847454ba0652a229618c29
+      internalID: -1875662542
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7144632ab781c24ba3d594ae2d8ddc0
-      internalID: -1259394008
+      spriteID: 3715400b577f5a1478c1a97d3c52eba8
+      internalID: -759723174
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f2b84322cfc7c14792922e11df0454a
-      internalID: -1808051212
+      spriteID: 44dc98fa68ff2b64b8c6774a9601cadd
+      internalID: 288945956
       vertices: []
       indices: 
       edges: []
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbedb50441988ab49a9829ee3411be24
-      internalID: -1133233431
+      spriteID: 26b6fa66559b06449a05f8d7f59b3716
+      internalID: -951576035
       vertices: []
       indices: 
       edges: []
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e76bae29bedad449d26d1417a71de4
-      internalID: -1103350351
+      spriteID: a37e686fab8a43e4c86b09fc79298a72
+      internalID: -1097878973
       vertices: []
       indices: 
       edges: []
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cf6e4f34ad7d114fba9075eee23f304
-      internalID: 1346210155
+      spriteID: 66cb4001956d276489f42d4657550481
+      internalID: 1723447554
       vertices: []
       indices: 
       edges: []
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9514558eb2cae2541a368cc0b3fcd0f9
-      internalID: -19370192
+      spriteID: 46a4dd9640cfa004d9f1528439197906
+      internalID: -1044702982
       vertices: []
       indices: 
       edges: []
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7da2f39ac7d4e944ae130b8d98950f5
-      internalID: 1693264895
+      spriteID: a9f6ee81a14e20849b6cc6e942ce8537
+      internalID: 781394425
       vertices: []
       indices: 
       edges: []
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 156dc89dc8b3caa4f8182db73c3487d1
-      internalID: -483768471
+      spriteID: 88fcc55fb7229a5419aa15dd52678ca3
+      internalID: -2090048501
       vertices: []
       indices: 
       edges: []
@@ -358,17 +358,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shared-0-sheet3_0: -2011092232
-      shared-0-sheet3_1: 1005186386
-      shared-0-sheet3_10: -483768471
-      shared-0-sheet3_2: -82524921
-      shared-0-sheet3_3: -1259394008
-      shared-0-sheet3_4: -1808051212
-      shared-0-sheet3_5: -1133233431
-      shared-0-sheet3_6: -1103350351
-      shared-0-sheet3_7: 1346210155
-      shared-0-sheet3_8: -19370192
-      shared-0-sheet3_9: 1693264895
+      shared-0-sheet3_0: 434818458
+      shared-0-sheet3_1: 141397088
+      shared-0-sheet3_10: -2090048501
+      shared-0-sheet3_2: -1875662542
+      shared-0-sheet3_3: -759723174
+      shared-0-sheet3_4: 288945956
+      shared-0-sheet3_5: -951576035
+      shared-0-sheet3_6: -1097878973
+      shared-0-sheet3_7: 1723447554
+      shared-0-sheet3_8: -1044702982
+      shared-0-sheet3_9: 781394425
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
