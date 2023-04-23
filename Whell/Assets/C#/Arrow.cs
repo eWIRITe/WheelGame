@@ -71,11 +71,11 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        LeanTween.rotateZ(this.gameObject, -15, 0.2f).setOnComplete(ReturnToStandart);
+        LeanTween.rotateZ(this.gameObject, -15, 0.4f).setOnComplete(ReturnToStandart);
     }
     public void ReturnToStandart()
     {
-        LeanTween.rotateZ(this.gameObject, 0, 0.3f);
+        LeanTween.rotateZ(this.gameObject, 0, 0.2f);
     }
 
 }
