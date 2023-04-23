@@ -19,7 +19,7 @@ public class Arrow : MonoBehaviour
     {
         Coliders.Add(collision.gameObject);
 
-        LeanTween.rotateZ(this.gameObject, -15, 0.3f).setOnComplete(ReturnToStandart);
+        LeanTween.rotateZ(this.gameObject, -15, 0.2f).setOnComplete(ReturnToStandart);
 
     }
 
@@ -71,7 +71,7 @@ public class Arrow : MonoBehaviour
 
     public void ReturnToStandart()
     {
-        LeanTween.rotateZ(this.gameObject, 0, 0.1f);
+        LeanTween.rotateZ(this.gameObject, 0, 0.3f);
     }
 
 }

@@ -23,6 +23,15 @@ public class GameManager : MonoBehaviour
     public TMP_InputField TextInput;
     public GameObject NotEnothMoneyText;
 
+    [Space, Header("Animation")]
+    public Animator _anim;
+
+    [Space, Header("Sounds")]
+    public AudioSource _audio;
+
+    public AudioClip loseSound;
+    public AudioClip winSound;
+
     //score variables
     private float Score = 4200;
     private float losedMoney = 0;
@@ -85,7 +94,7 @@ public class GameManager : MonoBehaviour
     public void StartWheel()
     {
         if (TextInput.text == "") return;
-        if(Score-int.Parse(TextInput.text) < 0)
+        if (Score - int.Parse(TextInput.text) < 0)
         {
             OnNotEnothMoney();
 
@@ -107,6 +116,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            _audio.PlayOneShot(loseSound);
             losedMoney += SetMoney;
             SetMoney = 0;
             TextInput.text = "";
@@ -119,6 +129,8 @@ public class GameManager : MonoBehaviour
     //ather functions
     public void Win()
     {
+        _anim.SetTrigger("Win");
+        _audio.PlayOneShot(winSound);
         Score += (SetMoney * SatNumber);
     }
 
@@ -152,9 +164,9 @@ public class GameManager : MonoBehaviour
     {
         Indexes = new List<int>();
 
-        for(int i = 0; i<List.Count; i++)
+        for (int i = 0; i < List.Count; i++)
         {
-            if(List[i] == Need)
+            if (List[i] == Need)
             {
                 Indexes.Add(i);
             }
@@ -167,7 +179,7 @@ public class GameManager : MonoBehaviour
     {
         float I = UnityEngine.Random.Range(0, 100);
 
-        if (I * DateTime.Now.Minute / 60 < losedMoney/10)
+        if (I * DateTime.Now.Minute / 60 < losedMoney / 10)
         {
             return SatNumber;
         }
