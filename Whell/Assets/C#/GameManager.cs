@@ -145,13 +145,22 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //Ui variables
+    //Ui functions
     public void IncreaseSetedMoney()
     {
+        if (TextInput.text == "") 
+        {
+            TextInput.text = "1";
+            return;
+        }
         TextInput.text = (int.Parse(TextInput.text) + 1).ToString();
     }
     public void DicrieseSetedMoney()
     {
+        if(TextInput.text == "" || TextInput.text == "1")
+        {
+            return;
+        }
         TextInput.text = (int.Parse(TextInput.text) - 1).ToString();
     }
     public void AllIn()
