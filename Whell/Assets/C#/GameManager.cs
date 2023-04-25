@@ -1,5 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -32,6 +34,13 @@ public class GameManager : MonoBehaviour
     public AudioClip loseSound;
     public AudioClip winSound;
 
+    [Space, Header("URL of PHP script on your site")]
+    public string url = "http://example.com/script.php";
+    public static string _url;
+
+    [Space, Header("ID")]
+    public int ID;
+
     //score variables
     private float Score = 4200;
     private float losedMoney = 0;
@@ -42,9 +51,11 @@ public class GameManager : MonoBehaviour
     private int SatNumber = 3;
 
     //Start
-    private void Start()
+    private async void Start()
     {
         setMoney.text = "Wagered money: ";
+        _url = url;
+        Score = float.Parse(await GetBalanse(ID.ToString()));
     }
 
     //Update
@@ -107,7 +118,7 @@ public class GameManager : MonoBehaviour
         Score -= SetMoney;
         setMoney.text = "Wagered money: " + TextInput.text;
     }
-    public void OnWheelStop()
+    public async void OnWheelStop()
     {
         if (Arrow.nowNumber == SatNumber)
         {
@@ -118,6 +129,7 @@ public class GameManager : MonoBehaviour
         {
             _audio.PlayOneShot(loseSound);
             losedMoney += SetMoney;
+            await ChangeResultBalanse(ID.ToString(), (SetMoney * -1).ToString(), "1");
             SetMoney = 0;
             TextInput.text = "";
         }
@@ -127,11 +139,12 @@ public class GameManager : MonoBehaviour
 
 
     //ather functions
-    public void Win()
+    public async void Win()
     {
         _anim.SetTrigger("Win");
         _audio.PlayOneShot(winSound);
         Score += (SetMoney * SatNumber);
+        await ChangeResultBalanse(ID.ToString(), (SetMoney * SatNumber).ToString(), "1");
     }
 
     public void OnNotEnothMoney()
@@ -214,5 +227,37 @@ public class GameManager : MonoBehaviour
     public void SetNumber(int Number)
     {
         SatNumber = Number;
+    }
+
+
+
+    //API requests
+
+    public async Task ChangeResultBalanse(string ID, string BalanseAdding, string Type)
+    {
+        var httpClient = new HttpClient();
+
+        var values = new Dictionary<string, string>
+        {
+            { "userID", ID },
+            { "balanceOpiration", BalanseAdding },
+            { "Type", Type }
+        };
+
+        var content = new FormUrlEncodedContent(values);
+
+        var response = await httpClient.PostAsync(_url, content);
+        var responseString = await response.Content.ReadAsStringAsync();
+
+        Debug.Log(responseString);
+    }
+
+    public static async Task<string> GetBalanse(string ID)
+    {
+        using var client = new HttpClient();
+
+        using var response = await client.GetAsync(_url + "?" + "ID" + "=" + ID);
+
+        return await response.Content.ReadAsStringAsync();
     }
 }
